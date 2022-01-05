@@ -46,3 +46,32 @@ BIOS和MBR分区表
 在fdsik新建分区N
 
 在分区结束后检查确认并使用W保存
+
+### 格式化分区
+
+使用EX4文件系统格式化根分区
+
+`mkfs.ext4 /dev/sdaroot`
+
+初始化swap分区
+
+`mkswap /dev/sdaswap`
+
+### 挂载分区
+
+挂载根分区
+
+`mount /dev/sdaroot /mnt`
+
+启用swap分区
+
+`swapon /dev/sdaswap`
+
+### 安装
+
+安装最小主义组件
+
+`pacstrap /mnt base linux linux-firmware`
+
+
+
